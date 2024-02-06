@@ -1,9 +1,11 @@
-import Message from "./components/Message";
+import React from "react";
+import NavBar from "./components/NavBar";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <Message></Message>
+    <div className="application">
+      <NavBar></NavBar>
     </div>
   );
 }
