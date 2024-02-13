@@ -10,7 +10,7 @@ function NavBar() {
     <>
       <Navbar expand="lg" className="navbar-dark bg-transparent">
         <Container fluid>
-          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand href="#">JuiceHUB</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
