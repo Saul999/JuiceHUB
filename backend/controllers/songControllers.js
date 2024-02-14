@@ -3,6 +3,8 @@ import { SongSchema } from "../models/songsModel";
 
 const Song = mongoose.model("Songs", SongSchema);
 
+// ADD NEw SONG | POST
+
 export const addNewSong = (req, res) => {
   let newSong = new Song(req.body);
 
@@ -16,6 +18,8 @@ export const addNewSong = (req, res) => {
     });
 };
 
+// GET NEW SONG | GET
+
 export const getSongs = async (req, res) => {
   try {
     const songs = await Song.find({});
@@ -25,6 +29,8 @@ export const getSongs = async (req, res) => {
   }
 };
 
+// GET 1 SONG | GET + :id
+
 export const getSongWithID = async (req, res) => {
   try {
     const songs = await Song.findById(req.params.SongId);
@@ -33,6 +39,8 @@ export const getSongWithID = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+// UPDATE SONG | PUT
 
 export const updateSong = async (req, res) => {
   try {
@@ -46,6 +54,8 @@ export const updateSong = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+// DELETE SONG | DElETE
 
 export const deleteSong = async (req, res) => {
   //   try {
