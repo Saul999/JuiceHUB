@@ -5,13 +5,16 @@ const Schema = mongoose.Schema;
 export const SongSchema = new Schema({
   era: {
     type: String,
-    required: false,
+    required: true,
   },
   name: {
     type: String,
     required: true,
   },
-  notes: String,
+  info: {
+    type: String,
+    required: false,
+  },
   dateLeaked: {
     type: Date,
     required: false,
@@ -22,8 +25,8 @@ export const SongSchema = new Schema({
   },
   currentlyAvailable: {
     type: String,
-    enum: ["Yes", "No"],
-    required: false,
+    enum: ["Full (CDQ)", " Snippet (CDQ)", "Full (HQ)"],
+    required: true,
   },
   isCirculating: {
     type: String,
