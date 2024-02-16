@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+// import { useState } from "react";
 
-export default function SearchBar() {
+function SearchBar() {
+  // const [searched, setSearch] = useState("");
+  // const [checked, setChecked] = useState();
+
   return (
     <>
-      Search bar correct
-      <h1>Hellos</h1>
+      <div className="Home-search-section">
+        <img src="/assets/JWCloudBanner.jpeg" alt="juice wrld search pic" />
+        <div className="searchbar-container">
+          <label htmlFor="">Search </label>
+          <input type="text" />
+        </div>
+      </div>
     </>
   );
 }
+export default SearchBar;
