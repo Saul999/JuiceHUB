@@ -1,8 +1,9 @@
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+//import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+// import { Link } from "react-router-dom";
 //import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
@@ -10,7 +11,7 @@ function NavBar() {
     <>
       <Navbar expand="lg" className="navbar-dark bg-transparent">
         <Container fluid>
-          <Navbar.Brand href="#">JuiceHUB</Navbar.Brand>
+          <Navbar.Brand href="/">JuiceHUB</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -18,10 +19,10 @@ function NavBar() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
-              <Nav.Link href="#action2">About</Nav.Link>
-              <Nav.Link href="#action2">List</Nav.Link>
+              <Nav.Link to="/">Home</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/list">List</Nav.Link>
+              <Nav.Link href="/review">Send Review</Nav.Link>
             </Nav>
             {/* <Form className="d-flex">
               <Form.Control
@@ -32,7 +33,7 @@ function NavBar() {
               />
               <Button className="search-button">Search</Button>
             </Form> */}
-            <Nav.Link className="white" href="#action1">
+            <Nav.Link className="white" href="/profile">
               Profile
             </Nav.Link>
           </Navbar.Collapse>

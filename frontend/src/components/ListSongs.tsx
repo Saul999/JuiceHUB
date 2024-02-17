@@ -7,10 +7,11 @@ function ListSongs() {
 
       {["sm", "md", "lg", "xl", "xxl"].map((breakpoint) => (
         <ListGroup key={breakpoint} horizontal={breakpoint} className="my-2">
-          <ListGroup.Item>This ListGroup</ListGroup.Item>
-          <ListGroup.Item>renders horizontally</ListGroup.Item>
-          <ListGroup.Item>on {breakpoint}</ListGroup.Item>
-          <ListGroup.Item>and above!</ListGroup.Item>
+          <ListGroup.Item>Era</ListGroup.Item>
+          <ListGroup.Item>Name</ListGroup.Item>
+          <ListGroup.Item>Producer {breakpoint}</ListGroup.Item>
+          <ListGroup.Item>Info</ListGroup.Item>
+          <ListGroup.Item>Leaked Status</ListGroup.Item>
         </ListGroup>
       ))}
     </>
