@@ -1,8 +1,7 @@
-* {
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
+.App {
+  text-align: center;
 }
+
 .Home-search-section {
   /* margin properties */
   position: relative;
