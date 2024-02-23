@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import SongListPage from "./pages/SongListPage";
 import SendReviewPage from "./pages/SendReviewPage";
 import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<HomePage></HomePage>}></Route>
+              <Route path="/login" element={<LoginPage></LoginPage>}></Route>
               <Route path="/about" element={<AboutPage />}></Route>
               <Route path="/list" element={<SongListPage />}></Route>
               <Route path="/review" element={<SendReviewPage />}></Route>

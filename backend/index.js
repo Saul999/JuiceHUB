@@ -23,6 +23,11 @@ app.use(cors());
 
 routes(app);
 
+// app.get("/songs/:name", (req, res) => {
+//   const { name } = req.params;
+//   res.send(`Hello ${name}`);
+// });
+
 app.get("/", (req, res) => res.send(`Application is running on ${PORT}`));
 
 app.listen(PORT, () => console.log(`Your server is running on port ${PORT}`));
