@@ -15,8 +15,8 @@ export const SongSchema = new Schema({
     type: String,
     required: false,
   },
-  dateLeaked: {
-    type: Date,
+  date: {
+    type: String,
     required: false,
   },
   type: {
@@ -28,7 +28,7 @@ export const SongSchema = new Schema({
     enum: ["Full (CDQ)", " Snippet (CDQ)", "Full (HQ)"],
     required: true,
   },
-  isCirculating: {
+  circulating: {
     type: String,
     enum: ["Yes", "No"],
     required: false,
