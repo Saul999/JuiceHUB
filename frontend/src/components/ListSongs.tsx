@@ -26,7 +26,7 @@ function ListSongs() {
     <div className="table-container">
       <Table striped bordered hover size="sm" responsive="lg">
         <thead>
-          <tr>
+          <tr className="list-header">
             <th>#</th>
             <th>Era</th>
             <th>Title</th>
