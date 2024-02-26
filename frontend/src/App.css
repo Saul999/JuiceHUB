@@ -10,12 +10,12 @@
   margin-bottom: 24px;
   margin-left: 24px;
   /* border properties */
-  border-color: #fde1a0;
-  border-style: solid;
+  /* border-color: null; */
+  /* border-style: solid;
   border-top-width: 8px;
   border-right-width: 8px;
   border-bottom-width: 8px;
-  border-left-width: 8px;
+  border-left-width: 8px; */
   /* padding properties */
   padding-top: 8px;
   padding-right: 8px;
@@ -31,7 +31,7 @@
   width: 80%;
 }
 
-.Home-search-section div {
+.searchbar-container {
   position: absolute;
   top: 50%;
   left: 50%;
