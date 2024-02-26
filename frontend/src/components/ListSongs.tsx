@@ -3,6 +3,8 @@ import axios from "axios";
 import { Form } from "react-bootstrap";
 import { ChangeEvent } from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+// import SongPage from "../pages/SongPage";
 
 interface Song {
   _id: string;
@@ -35,7 +37,7 @@ function ListSongs() {
         <img src="/assets/JWCloudBanner.jpeg" alt="juice wrld search pic" />
         <div className="searchbar-container">
           <Form>
-            <Form.Group className="mb-3" controlId="formGroupEmail">
+            <Form.Group className="" controlId="">
               <Form.Label>Search for Song</Form.Label>
               <Form.Control
                 onChange={searchValue}
@@ -75,8 +77,10 @@ function ListSongs() {
                 <tr key={song._id}>
                   <td>{index + 1}</td>
                   <td>{song.era}</td>
-                  <td>{song.name}</td>
-                  <td>{song.info || "-"}</td>
+                  <td>
+                    <Link to={`/songs/${song._id}` || "-"}>{song.name}</Link>
+                  </td>
+                  <td>{song.info} </td>
                   <td>{song.date}</td>
                   <td>{song.type || "-"}</td>
                   <td>{song.circulating || "-"}</td>
