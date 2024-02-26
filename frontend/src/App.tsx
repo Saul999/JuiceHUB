@@ -21,7 +21,10 @@ function App() {
               <Route path="/login" element={<LoginPage></LoginPage>}></Route>
               <Route path="/about" element={<AboutPage />}></Route>
               <Route path="/list" element={<SongListPage />}></Route>
-              <Route path="/songs/:id" element={<SongPage></SongPage>}></Route>
+              <Route
+                path="/songs/:SongId"
+                element={<SongPage></SongPage>}
+              ></Route>
               <Route path="/review" element={<SendReviewPage />}></Route>
               <Route path="/profile" element={<ProfilePage />}></Route>
             </Routes>
