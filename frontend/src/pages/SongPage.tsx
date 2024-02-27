@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+// import SendReview from "../components/SendReview";
 
 interface Song {
   _id: string;
@@ -18,12 +19,9 @@ function SongPage() {
   const { SongId } = useParams();
 
   useEffect(() => {
-    console.log("SongId:", SongId);
     axios
       .get<Song>(`http://localhost:4000/songs/${SongId}`)
       .then((response) => {
-        console.log(response.data);
-
         setSongs(response.data);
       });
   }, [SongId]);
@@ -31,8 +29,15 @@ function SongPage() {
     <div>
       {song ? (
         <>
-          <h2>{song.name}</h2>
-          <p>Era: {song.era}</p>
+          <h1>{song.name}</h1>
+          <p>
+            <p>
+              Era: {song.era} - Date Leaked: {song.date}
+            </p>
+          </p>
+          <p></p>
+
+          <p>Type: {song.type}</p>
           <p>Info: {song.info}</p>
         </>
       ) : (
