@@ -1,4 +1,5 @@
 import Table from "react-bootstrap/Table";
+import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 import { Form } from "react-bootstrap";
 import { ChangeEvent } from "react";
@@ -21,6 +22,7 @@ interface Song {
 function ListSongs() {
   const [songs, setSongs] = useState<Song[]>([]);
   const [search, setSearch] = useState("");
+  // const [eraVal, setEraVal] = useState<string>("");
 
   const searchValue = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -32,12 +34,30 @@ function ListSongs() {
     });
   }, []);
 
+  // const setEra = (era : string)=> {
+  //   setEraVal
+  // }
+
   return (
     <>
       <div className="Home-search-section">
         <img src="/assets/JWCloudBanner.jpeg" alt="juice wrld search pic" />
         <div className="searchbar-container">
-          <Form>
+          <Dropdown className="dropdown-filter">
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Search by Eras
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">JuiceTheKid</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">JW999</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">GBGR</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">WOD</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">DRFL</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">JW3</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Form className="search-bar">
             <Form.Group className="" controlId="">
               <Form.Label>Search for Song</Form.Label>
               <Form.Control
