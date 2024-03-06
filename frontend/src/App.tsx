@@ -8,6 +8,7 @@ import SendReviewPage from "./pages/SendReviewPage";
 import ProfilePage from "./pages/ProfilePage";
 import SongPage from "./pages/SongPage";
 import LoginPage from "./pages/LoginPage";
+import CreateAccPage from "./pages/CreateAccPage";
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
               ></Route>
               <Route path="/review" element={<SendReviewPage />}></Route>
               <Route path="/profile" element={<ProfilePage />}></Route>
+              <Route
+                path="/create-account"
+                element={<CreateAccPage></CreateAccPage>}
+              ></Route>
             </Routes>
           </Router>
         </div>
