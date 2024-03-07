@@ -32,8 +32,8 @@ function NavBar() {
               />
               <Button className="search-button">Search</Button>
             </Form> */}
-            <Nav.Link className="white" href="/profile">
-              Profile
+            <Nav.Link className="white" href="/login">
+              Log In
             </Nav.Link>
           </Navbar.Collapse>
         </Container>
