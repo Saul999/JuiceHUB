@@ -3,10 +3,18 @@ import Container from "react-bootstrap/Container";
 //import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import useUser from "../hooks/useUser";
 // import { Link } from "react-router-dom";
 //import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
+  const { user, isLoading } = useUser();
+
+  // stops "login" rendering when user is logged in
+  if (user === null) {
+    return null;
+  }
+
   return (
     <>
       <Navbar expand="lg" className="navbar-dark bg-transparent">
@@ -32,9 +40,15 @@ function NavBar() {
               />
               <Button className="search-button">Search</Button>
             </Form> */}
-            <Nav.Link className="white" href="/login">
-              Log In
-            </Nav.Link>
+            {user ? (
+              <Nav.Link className="white" href="/profile">
+                Profile
+              </Nav.Link>
+            ) : (
+              <Nav.Link className="white" href="/login">
+                Log In
+              </Nav.Link>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
