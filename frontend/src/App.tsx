@@ -9,6 +9,7 @@ import ProfilePage from "./pages/ProfilePage";
 import SongPage from "./pages/SongPage";
 import LoginPage from "./pages/LoginPage";
 import CreateAccPage from "./pages/CreateAccPage";
+import ReviewPage from "./pages/ReviewPage";
 
 function App() {
   return (
@@ -26,7 +27,14 @@ function App() {
                 path="/songs/:SongId"
                 element={<SongPage></SongPage>}
               ></Route>
-              <Route path="/review" element={<SendReviewPage />}></Route>
+              <Route
+                path="/songs/:SongId/review"
+                element={<ReviewPage />}
+              ></Route>
+              <Route
+                path="/songs/:SongId/send-review"
+                element={<SendReviewPage></SendReviewPage>}
+              ></Route>
               <Route path="/profile" element={<ProfilePage />}></Route>
               <Route
                 path="/create-account"

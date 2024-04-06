@@ -1,5 +1,5 @@
 import Table from "react-bootstrap/Table";
-import Dropdown from "react-bootstrap/Dropdown";
+// import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 import { Form } from "react-bootstrap";
 import { ChangeEvent } from "react";
@@ -43,7 +43,7 @@ function ListSongs() {
       <div className="Home-search-section">
         <img src="/assets/JWCloudBanner.jpeg" alt="juice wrld search pic" />
         <div className="searchbar-container">
-          <Dropdown className="dropdown-filter">
+          {/* <Dropdown className="dropdown-filter">
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Search by Eras
             </Dropdown.Toggle>
@@ -56,7 +56,7 @@ function ListSongs() {
               <Dropdown.Item href="#/action-3">DRFL</Dropdown.Item>
               <Dropdown.Item href="#/action-3">JW3</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown> */}
           <Form className="search-bar">
             <Form.Group className="" controlId="">
               <Form.Label>Search for Song</Form.Label>
