@@ -7,6 +7,7 @@ import {
   GithubAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+// import useUser from "../hooks/useUser";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -19,6 +20,7 @@ function LoginPage() {
   const googleSignUp = () => {
     signInWithPopup(auth, googleProvider)
       .then((response) => {
+        navigate("/");
         console.log(response.user);
       })
       .catch((err) => {
@@ -31,6 +33,7 @@ function LoginPage() {
   const githubSignUp = () => {
     signInWithPopup(auth, githubProvider)
       .then((response) => {
+        navigate("/");
         console.log(response.user);
       })
       .catch((err) => {
