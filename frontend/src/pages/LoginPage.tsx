@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -8,6 +14,29 @@ function LoginPage() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const googleProvider = new GoogleAuthProvider();
+  const auth = getAuth();
+  const googleSignUp = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((response) => {
+        console.log(response.user);
+      })
+      .catch((err) => {
+        console.log(err.code);
+      });
+  };
+
+  const githubProvider = new GithubAuthProvider();
+
+  const githubSignUp = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((response) => {
+        console.log(response.user);
+      })
+      .catch((err) => {
+        console.log(err.code);
+      });
+  };
   const logIn = async () => {
     try {
       await signInWithEmailAndPassword(getAuth(), email, password);
@@ -35,6 +64,8 @@ function LoginPage() {
         ></input>
         <button onClick={logIn}>Log in</button>
         <Link to="/create-account">Create Account Here</Link>
+        <button onClick={googleSignUp}>Google</button>
+        <button onClick={githubSignUp}>Github</button>
       </div>
     </>
   );
