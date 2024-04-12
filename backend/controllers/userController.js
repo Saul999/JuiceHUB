@@ -4,6 +4,8 @@ import { UserSchema } from "../models/userModel";
 
 const User = mongoose.model("User", UserSchema);
 
-export const AddUser = (req, res) => {
-  let newUser = new User(req.body);
-};
+export const getUser = (req, res) => {
+    try {
+        const user = await User.findOne({UID})
+    }
+}
