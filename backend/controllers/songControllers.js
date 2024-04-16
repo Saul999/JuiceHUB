@@ -3,7 +3,7 @@ import { SongSchema } from "../models/songsModel";
 
 const Song = mongoose.model("Songs", SongSchema);
 
-// ADD NEw SONG | POST
+// ADD NEW SONG | POST
 
 export const addNewSong = (req, res) => {
   let newSong = new Song(req.body);
