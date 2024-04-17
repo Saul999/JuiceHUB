@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import routes from "./routes/songRoutes";
+import authRoutes from "./routes/authRoutes";
 import cors from "cors";
 
 const app = express();
@@ -20,7 +21,7 @@ app.use(bodyParser.json());
 
 // CORS setup
 app.use(cors());
-
+authRoutes(app);
 routes(app);
 
 // app.get("/songs/:name", (req, res) => {

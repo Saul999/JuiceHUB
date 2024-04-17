@@ -4,8 +4,6 @@ import { UserSchema } from "../models/userModel";
 
 const User = mongoose.model("User", UserSchema);
 
-export const getUser = (req, res) => {
-    try {
-        const user = await User.findOne({UID})
-    }
-}
+export const test = (req, res) => {
+  res.json({ message: "User Test worksx" });
+};
