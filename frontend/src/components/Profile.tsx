@@ -17,8 +17,14 @@ function Profile() {
             roundedCircle
           />
 
-          <h1>Name</h1>
+          <h1>user.name</h1>
           <h2>Top 5 songs</h2>
+          <ul>
+            <li>song1</li>
+            <li>song2</li>
+          </ul>
+
+          <h3>Comments</h3>
           <Logout></Logout>
         </>
       ) : (
