@@ -20,9 +20,9 @@ const NavBar = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/list">List</Nav.Link>
               <Nav.Link href="/songs/:SongId/send-review">Send Review</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              {/* <Nav.Link href="/"></Nav.Link> */}
             </Nav>
             <Nav.Link className="white" href="/profile">
               Profile
