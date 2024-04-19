@@ -6,7 +6,9 @@ import cors from "cors";
 
 const app = express();
 const PORT = 4000;
-
+const clientOptions = {
+  serverApi: { version: "1", strict: true, deprecationErrors: true },
+};
 //mongo connection
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/songDB", {
