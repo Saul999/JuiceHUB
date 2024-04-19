@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 // import SendReview from "../components/SendReview";
 
 interface Song {
@@ -39,6 +40,10 @@ function SongPage() {
 
           <p>Type: {song.type}</p>
           <p>Info: {song.info}</p>
+
+          <Link to={"/songs/:SongId/send-review"} className="">
+            <Button>Send Review</Button>
+          </Link>
         </>
       ) : (
         <p>Loading...</p>
