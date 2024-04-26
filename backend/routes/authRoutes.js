@@ -1,8 +1,8 @@
 import express from "express";
-import { signup } from "../controllers/authController";
+import { signup, signin } from "../controllers/authController";
 
 const authRoutes = (app) => {
-  app.route("/auth").post(signup);
+  app.route("/auth/signup").post(signup);
+  app.route("/auth/signin").post(signin);
 };
-
 export default authRoutes;

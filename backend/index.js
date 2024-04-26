@@ -32,6 +32,15 @@ app.use(cors());
 authRoutes(app);
 routes(app);
 
+// app.use((err, req, res, next) => {
+//   const statusCode = err.statusCode || 500;
+//   const message = err.message || "Internal SErcer Error";
+//   return res.status(statusCode).json({
+//     success: false,
+//     message,
+//     statusCode,
+//   });
+// });
 // app.get("/songs/:name", (req, res) => {
 //   const { name } = req.params;
 //   res.send(`Hello ${name}`);

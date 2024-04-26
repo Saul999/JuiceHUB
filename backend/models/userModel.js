@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-export const UserSchema = Schema(
+export const UserSchema = new Schema(
   {
     username: {
       type: String,
@@ -18,27 +18,7 @@ export const UserSchema = Schema(
       type: String,
       required: true,
     },
-    // name: {
-    //   type: String,
-    //   required: true,
-    //   unique: true,
-    // },
-    // role: {
-    //   type: String,
-    //   enum: ["admin", "moderator", "user"],
-    //   default: "user",
-    // },
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
-    // updatedAt: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
+    // Other properties if needed
   },
-  { timestamps: true }
+  { timestamps: true, strict: true }
 );
-
-const User = mongoose.model("User", UserSchema);
-module.exports = User;
