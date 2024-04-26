@@ -1,6 +1,6 @@
 // import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Form, Button, Alert, Col, Container, Row } from "react-bootstrap";
 
 function CreateAccPage() {
@@ -10,6 +10,7 @@ function CreateAccPage() {
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -34,6 +35,7 @@ function CreateAccPage() {
         return;
       }
       setLoading(false);
+      navigate("/");
     } catch {
       setLoading(false);
       setError(true);
