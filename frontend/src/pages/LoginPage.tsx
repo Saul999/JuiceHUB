@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
+import { signInStart } from "../redux/user/userSlice";
+import { signInSuccess } from "../redux/user/userSlice";
+import { signInFailure } from "../redux/user/userSlice";
 
+import { useDispatch, useSelector } from "react-redux";
+import { useAppSelector } from "../redux/hooks";
 function LoginPage() {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
@@ -18,17 +23,20 @@ function LoginPage() {
   // };
 
   const [formData, setFormData] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(false);
+  // const { loading, error } = useAppSelector((state) => state.user.data);
+  const dispatch = useDispatch();
 
+  //HANDLE CHANGES
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  //HANDLE SUBMIT
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     try {
-      setLoading(true);
-      setError(false);
+      dispatch(signInStart());
 
       e.preventDefault();
       const res = await fetch("http://localhost:4000/auth/signin", {
@@ -40,14 +48,13 @@ function LoginPage() {
       });
       const data = await res.json();
       if (data.success === false) {
-        setError(true);
+        dispatch(signInFailure(error));
         return;
       }
-      setLoading(false);
+      dispatch(signInSuccess(data));
       navigate("/");
     } catch {
-      setLoading(false);
-      setError(true);
+      dispatch(signInFailure(error));
     }
   };
 
