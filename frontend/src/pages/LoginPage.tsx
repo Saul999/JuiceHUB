@@ -1,45 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
-import { signInStart } from "../redux/user/userSlice";
-import { signInSuccess } from "../redux/user/userSlice";
-import { signInFailure } from "../redux/user/userSlice";
 
-import { useDispatch, useSelector } from "react-redux";
-import { useAppSelector } from "../redux/hooks";
 function LoginPage() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const navigate = useNavigate();
-
-  // const logIn = async () => {
-  //   try {
-  //     await signInWithEmailAndPassword(getAuth(), email, password);
-  //     navigate("/");
-  //   } catch (e) {
-  //     setError(error);
-  //   }
-  // };
-
   const [formData, setFormData] = useState({});
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(false);
-  // const { loading, error } = useAppSelector((state) => state.user.data);
-  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
-  //HANDLE CHANGES
+  useEffect(() => {
+    // Check if user is already logged in
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      navigate("/profile");
+    }
+  }, [navigate]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  //HANDLE SUBMIT
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     try {
-      dispatch(signInStart());
+      setLoading(true);
+      setError(false);
 
       e.preventDefault();
-      const res = await fetch("http://localhost:4000/auth/signin", {
+      const res = await fetch("http://localhost:4000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,41 +35,27 @@ function LoginPage() {
       });
       const data = await res.json();
       if (data.success === false) {
-        dispatch(signInFailure(error));
+        setError(true);
         return;
       }
-      dispatch(signInSuccess(data));
-      navigate("/");
+      // Save user data to local storage
+      localStorage.setItem("user", JSON.stringify(data.user));
+      setLoading(false);
+      navigate("/profile");
     } catch {
-      dispatch(signInFailure(error));
+      setLoading(false);
+      setError(true);
     }
   };
 
-  const navigate = useNavigate();
-
-  // const createAccount = async () => {
-  //   try {
-  //     if (password !== confirmPass) {
-  //       setError("Passwords do not match !");
-  //       return;
-  //     }
-  //     if (password.length < 6) {
-  //       setError("Password must be at least 6 characters long!");
-  //       return;
-  //     }
-
-  //     await createUserWithEmailAndPassword(getAuth(), email, password);
-  //     navigate("/profile");
-  //   } catch {
-  //     setError(error);
-  //   }
-  // };
   return (
     <Container>
       <Row className="justify-content-md-center mt-5">
         <Col md="auto">
           <h1>Login</h1>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && (
+            <Alert variant="danger">Login failed. Please try again.</Alert>
+          )}
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Control
@@ -113,4 +86,5 @@ function LoginPage() {
     </Container>
   );
 }
+
 export default LoginPage;
