@@ -41,8 +41,8 @@ function SongPage() {
           <p>Type: {song.type}</p>
           <p>Info: {song.info}</p>
 
-          <Link to={"/songs/:SongId/send-review"} className="">
-            <Button>Send Review</Button>
+          <Link to={"/contributions"} className="">
+            <Button>Send Contribution</Button>
           </Link>
         </>
       ) : (

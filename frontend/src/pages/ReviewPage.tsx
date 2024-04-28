@@ -1,9 +1,9 @@
-import Review from "../components/Review";
+import SendReview from "../components/SendReview";
 
 function ReviewPage() {
   return (
     <>
-      <Review></Review>
+      <SendReview></SendReview>
     </>
   );
 }

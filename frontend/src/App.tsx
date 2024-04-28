@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import SongListPage from "./pages/SongListPage";
-import SendReviewPage from "./pages/SendReviewPage";
 import ProfilePage from "./pages/ProfilePage";
 import SongPage from "./pages/SongPage";
 import LoginPage from "./pages/LoginPage";
@@ -27,14 +26,7 @@ function App() {
                 path="/songs/:SongId"
                 element={<SongPage></SongPage>}
               ></Route>
-              <Route
-                path="/songs/:SongId/review"
-                element={<ReviewPage />}
-              ></Route>
-              <Route
-                path="/songs/:SongId/send-review"
-                element={<SendReviewPage></SendReviewPage>}
-              ></Route>
+              <Route path="/contributions" element={<ReviewPage />}></Route>
               <Route path="/profile" element={<ProfilePage />}></Route>
               <Route
                 path="/create-account"
