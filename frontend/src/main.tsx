@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { initializeApp } from "firebase/app";
+import { store } from "../src/redux/store";
+import { Provider } from "react-redux";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,7 +23,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 );
