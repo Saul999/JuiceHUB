@@ -2,7 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import routes from "./routes/songRoutes";
+import contributionRoutes from "./routes/contributionRoutes"; // Import contributionRoutes
 import cors from "cors";
+import { ContributionSchema } from "./models/contributionsModel";
 
 const app = express();
 const PORT = 4000;
@@ -12,7 +14,7 @@ const clientOptions = {
 //mongo connection
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/songDB", {
-  useNewURlParser: true,
+  useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
@@ -22,8 +24,8 @@ app.use(bodyParser.json());
 
 // CORS setup
 app.use(cors());
-
 routes(app);
+contributionRoutes(app);
 
 // app.get("/songs/:name", (req, res) => {
 //   const { name } = req.params;
