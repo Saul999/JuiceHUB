@@ -1,8 +1,6 @@
-// import NavBar from "./NavBar";
-import Logout from "./Logout";
 import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
-import Image from "react-bootstrap/Image";
+import Logout from "./Logout";
 
 function Profile() {
   const { user } = useUser();
@@ -12,23 +10,18 @@ function Profile() {
       <h1>Profile page</h1>
       {user ? (
         <>
-          <Image
-            src="frontend/public/assets/JWCloudBanner.jpeg"
-            roundedCircle
-          />
-
-          <h1>user.name</h1>
+          <h1>{user.displayName}</h1>
+          {/* <h1>{user.uid}</h1> */}
           <h2>Top 5 songs</h2>
           <ul>
-            <li>song1</li>
-            <li>song2</li>
+            <li>Song 1</li> {/* Example song */}
+            <li>Song 2</li> {/* Example song */}
           </ul>
-
           <h3>Comments</h3>
-          <Logout></Logout>
+          <Logout />
         </>
       ) : (
-        <Link to={"/login"}>
+        <Link to="/login">
           <button>Log in</button>
         </Link>
       )}
