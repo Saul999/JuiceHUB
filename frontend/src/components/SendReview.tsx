@@ -8,6 +8,7 @@ function SendReview() {
   const { user } = useUser();
   const [title, setTitle] = useState("");
   const [information, setInformation] = useState("");
+  const [submissionSuccess, setSubmissionSuccess] = useState(false); // State for tracking submission success
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -27,12 +28,13 @@ function SendReview() {
         body: JSON.stringify({
           title,
           information,
-          userID: user.uid, // Since user is not null here, accessing user.uid is safe
+          userID: user.uid,
         }),
       });
 
       if (response.ok) {
         console.log("Review submitted successfully");
+        setSubmissionSuccess(true); // Set submission success state to true
         // Optionally, you can redirect the user to another page
       } else {
         console.error("Failed to submit review");
@@ -74,7 +76,7 @@ function SendReview() {
                 <Form.Label>User ID</Form.Label>
                 <Form.Control
                   as="textarea"
-                  value={user.uid} // Since user is not null here, accessing user.uid is safe
+                  value={user.uid}
                   readOnly
                   style={{ width: "400px" }}
                 />
@@ -84,6 +86,8 @@ function SendReview() {
                 Send
               </Button>
             </Form>
+            {submissionSuccess && <p>Review submitted successfully!</p>}{" "}
+            {/* Conditionally render success message */}
           </div>
         </div>
       ) : (
