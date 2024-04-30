@@ -1,4 +1,4 @@
-export class Message extends Component {
+export class Message {
   render() {
     return <div>Hello World</div>;
   }

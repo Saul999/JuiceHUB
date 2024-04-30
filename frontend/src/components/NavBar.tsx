@@ -14,7 +14,7 @@ const NavBar = () => {
         <Container fluid>
           <Navbar.Brand href="/">JuiceHUB</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Collapse id="navbarScroll" role="navigation">
             <Nav
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}

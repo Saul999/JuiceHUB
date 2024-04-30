@@ -2,7 +2,7 @@ import { useState, ChangeEvent } from "react";
 import Form from "react-bootstrap/Form";
 
 function SearchBar() {
-  const [search, setSearch] = useState("");
+  const [, setSearch] = useState("");
 
   const searchValue = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
