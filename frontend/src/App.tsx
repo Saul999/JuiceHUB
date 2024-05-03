@@ -9,6 +9,7 @@ import SongPage from "./pages/SongPage";
 import LoginPage from "./pages/LoginPage";
 import CreateAccPage from "./pages/CreateAccPage";
 import ReviewPage from "./pages/ReviewPage";
+import AddSongPage from "./pages/AddSongPage";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
               <Route path="/login" element={<LoginPage></LoginPage>}></Route>
               <Route path="/about" element={<AboutPage />}></Route>
               <Route path="/list" element={<SongListPage />}></Route>
+              <Route
+                path="/add-song"
+                element={<AddSongPage></AddSongPage>}
+              ></Route>
               <Route
                 path="/songs/:SongId"
                 element={<SongPage></SongPage>}
