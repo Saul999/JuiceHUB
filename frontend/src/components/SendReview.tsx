@@ -20,17 +20,20 @@ function SendReview() {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/contributions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          title,
-          information,
-          userID: user.uid,
-        }),
-      });
+      const response = await fetch(
+        "https://juicehub.onrender.com/contributions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            title,
+            information,
+            userID: user.uid,
+          }),
+        }
+      );
 
       if (response.ok) {
         console.log("Review submitted successfully");

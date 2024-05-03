@@ -29,9 +29,11 @@ function ListSongs() {
   };
 
   useEffect(() => {
-    axios.get<Song[]>(`http://localhost:4000/songs`).then((response) => {
-      setSongs(response.data);
-    });
+    axios
+      .get<Song[]>(`https://juicehub.onrender.com/songs`)
+      .then((response) => {
+        setSongs(response.data);
+      });
   }, []);
 
   // const setEra = (era : string)=> {
