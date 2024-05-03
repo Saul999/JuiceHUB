@@ -6,7 +6,7 @@ import {
   deleteSong,
 } from "../controllers/songControllers";
 
-const routes = (app) => {
+const songRoutes = (app) => {
   app
     .route("/songs")
     //Get ENDPOINT
@@ -24,4 +24,4 @@ const routes = (app) => {
     .delete(deleteSong);
 };
 
-export default routes;
+export default songRoutes;
