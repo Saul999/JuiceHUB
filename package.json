@@ -1,0 +1,22 @@
+{
+  "name": "juicehub",
+  "version": "1.0.0",
+  "description": "Community driven, Informational & Interactive website for the late artist Juice WRLD.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/index.js --exec babel-node -e js",
+    "start": "node backend/index.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
