@@ -5,18 +5,38 @@ import routes from "./routes/songRoutes";
 import contributionRoutes from "./routes/contributionRoutes"; // Import contributionRoutes
 import cors from "cors";
 import { ContributionSchema } from "./models/contributionsModel";
+import path from "path";
+import dotenv from "dotenv";
+dotenv.config();
+
+const mongoURI = process.env.MONGO_URI;
+const __dirname = path.resolve();
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
+
 const PORT = 4000;
 const clientOptions = {
   serverApi: { version: "1", strict: true, deprecationErrors: true },
 };
 //mongo connection
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/songDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to mongo");
+  })
+  .catch((err) => {
+    console.log(err);
+  }); // Use environment variable};
 
 //bodyParser setup
 app.use(bodyParser.urlencoded({ extended: true }));
