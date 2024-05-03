@@ -14,12 +14,6 @@ const __dirname = path.resolve();
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
-
 const PORT = 4000;
 const clientOptions = {
   serverApi: { version: "1", strict: true, deprecationErrors: true },
