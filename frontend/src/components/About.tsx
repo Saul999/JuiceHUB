@@ -13,6 +13,14 @@ function About() {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
+        <Accordion.Header>Specific Terms and Meanings</Accordion.Header>
+        <Accordion.Body>
+          CDQ - "CD Quality" | HQ - "High Quality" | "Circulating" - The songs
+          is on the internet and not "vaulted" | "Full" - The full song is
+          available
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
         <Accordion.Header>About Us</Accordion.Header>
         <Accordion.Body>
           I am a computer science student working on the JuiceHub for fun and on

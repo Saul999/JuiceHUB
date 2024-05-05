@@ -26,7 +26,7 @@ function Profile() {
             </>
           ) : (
             <div className="text-center">
-              <h1>Welcome to My App</h1>
+              <h1>Welcome to the JuiceHub</h1>
               <p className="mb-4">Please log in to view your profile.</p>
               <Link to="/login">
                 <Button variant="primary">Log In</Button>
