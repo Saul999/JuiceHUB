@@ -21,8 +21,8 @@ const NavBar = () => {
               navbarScroll
             >
               <Nav.Link href="/contributions">Send Contribution</Nav.Link>
+              <Nav.Link href="/add-song">Add Song</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
-              {/* <Nav.Link href="/"></Nav.Link> */}
             </Nav>
             <Nav.Link className="white" href="/profile">
               Profile

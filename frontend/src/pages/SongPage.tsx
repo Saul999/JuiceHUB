@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { Button } from "react-bootstrap";
+import { Button, Card, Container, Spinner } from "react-bootstrap";
 // import SendReview from "../components/SendReview";
 
 interface Song {
@@ -27,28 +27,31 @@ function SongPage() {
       });
   }, [SongId]);
   return (
-    <div>
+    <Container className="mt-5">
       {song ? (
-        <>
-          <h1>{song.name}</h1>
-          <p>
-            <p>
-              Era: {song.era} - Date Leaked: {song.date}
-            </p>
-          </p>
-          <p></p>
-
-          <p>Type: {song.type}</p>
-          <p>Info: {song.info}</p>
-
-          <Link to={"/contributions"} className="">
-            <Button>Send Contribution</Button>
-          </Link>
-        </>
+        <Card>
+          <Card.Body>
+            <Card.Title>{song.name}</Card.Title>
+            <Card.Text>
+              <p>
+                Era: {song.era} - Date Leaked: {song.date}
+              </p>
+              <p>Type: {song.type}</p>
+              <p>Info: {song.info || "Not available"}</p>
+            </Card.Text>
+            <Link to="/contributions">
+              <Button variant="primary">Send Contribution</Button>
+            </Link>
+          </Card.Body>
+        </Card>
       ) : (
-        <p>Loading...</p>
+        <Container className="text-center">
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </Container>
       )}
-    </div>
+    </Container>
   );
 }
 
