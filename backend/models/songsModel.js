@@ -33,4 +33,8 @@ export const SongSchema = new Schema({
     enum: ["Yes", "No"],
     required: false,
   },
+  userContributions: {
+    type: String,
+    required: false,
+  },
 });

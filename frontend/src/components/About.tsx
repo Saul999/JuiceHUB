@@ -9,7 +9,14 @@ function About() {
           The JuiceHub will be an interactive and informative website about the
           late artist Juice WRLD. This platform aims to compile comprehensive
           data for each of his songs, offering users a detailed insight into the
-          artist's musical legacy.
+          artist's musical legacy. If you want a more detailed report{" "}
+          <a
+            target="_blank"
+            href="https://docs.google.com/document/d/1WpAbp_2ocZH5fRYMviyKkMfK_9chKKvsVLQzYzQp5cE/edit"
+          >
+            click here
+          </a>
+          .
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
