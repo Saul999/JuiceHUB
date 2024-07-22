@@ -7,6 +7,7 @@ import cors from "cors";
 import { ContributionSchema } from "./models/contributionsModel";
 import path from "path";
 import dotenv from "dotenv";
+import userRoutes from "./routes/userRoutes";
 dotenv.config();
 
 const mongoURI = process.env.MONGO_URI;
@@ -40,6 +41,7 @@ app.use(bodyParser.json());
 app.use(cors());
 routes(app);
 contributionRoutes(app);
+userRoutes(app);
 
 // app.get("/songs/:name", (req, res) => {
 //   const { name } = req.params;
