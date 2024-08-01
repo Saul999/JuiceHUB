@@ -1,44 +1,10 @@
-<img src="media/image1.png" style="width:1.90104in;height:1.90104in" /><img src="media/image2.png" style="width:2.35764in;height:0.59653in" />
-
-**Department of Computer Science**
+**CSUF Department of Computer Science**
 
 **CPSC 491 CAPSTONE PROJECT PROPOSAL**
 
 **AUTHOR(S)**
 
 Saul Ruiz
-
-<table>
-<colgroup>
-<col style="width: 63%" />
-<col style="width: 8%" />
-<col style="width: 28%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Student Name</strong></th>
-<th></th>
-<th><strong>Student ID</strong></th>
-</tr>
-<tr class="odd">
-<th>Saul Ruiz</th>
-<th></th>
-<th><strong>886901602</strong></th>
-</tr>
-<tr class="header">
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr class="odd">
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 
 <table>
 <colgroup>
@@ -72,18 +38,6 @@ Saul Ruiz
 <col style="width: 12%" />
 </colgroup>
 <thead>
-<tr class="header">
-<th>Faculty Proposal Advisor</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr class="odd">
-<th></th>
-<th>Printed name</th>
-<th>Signature</th>
-<th>Date</th>
-</tr>
 </thead>
 <tbody>
 </tbody>
@@ -91,7 +45,7 @@ Saul Ruiz
 
 <img src="media/image9.png" style="width:6.5in;height:1.36111in" />
 
-**<span class="mark">The JuiceHub</span>**
+# <span class="mark">The JuiceHub</span>
 
 By: Saul Ruiz
 
